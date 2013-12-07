@@ -1,7 +1,7 @@
 <?php
 /* 
 Plugin Name: Twitter Trends Widget
-Plugin URI: https://github.com/jetonr/Twitter-Trends-Widget
+Plugin URI: https://github.com/jetonr/twitter-trends-widget
 Description: Displays Twitter Trends in WordPress widget from Countries and Cities.
 Author: jetonr
 Version: 1.0 
@@ -26,22 +26,6 @@ function twitter_trends_widget_styles() {
 
 class Twitter_Trends_Widget extends WP_Widget {
 
-	/**
-	 * @TODO Add class constructor description.
-	 */
-	function __construct() {
-		// Register style sheet.
-		add_action( 'wp_enqueue_scripts', array( $this, 'twitter_trends_widget_styles' ) );
-	}
-
-	/**
-	 * Register and enqueue style sheet.
-	 */
-	public function twitter_trends_widget_styles() {
-		wp_register_style( 'twitter-trends-widget', plugins_url( 'twitter-trends-widget/css/twitter_trends_widget.css' ) );
-		wp_enqueue_style( 'twitter-trends-widget' );
-	}
-	
 	function Twitter_Trends_Widget()
 	{
 		$widget_ops = array('description' => 'Shows latest trends from Cities and Countries');

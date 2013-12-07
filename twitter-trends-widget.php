@@ -16,8 +16,32 @@ function trends_load_widgets()
 	register_widget('Twitter_Trends_Widget');
 }
 
+// Register style sheet.
+add_action( 'wp_enqueue_scripts', 'twitter_trends_widget_styles' );
+
+function twitter_trends_widget_styles() {
+	wp_register_style( 'twitter-trends-widget', plugins_url( 'twitter-trends-widget/css/twitter_trends_widget.css' ) );
+	wp_enqueue_style( 'twitter-trends-widget' );
+}
+
 class Twitter_Trends_Widget extends WP_Widget {
 
+	/**
+	 * @TODO Add class constructor description.
+	 */
+	function __construct() {
+		// Register style sheet.
+		add_action( 'wp_enqueue_scripts', array( $this, 'twitter_trends_widget_styles' ) );
+	}
+
+	/**
+	 * Register and enqueue style sheet.
+	 */
+	public function twitter_trends_widget_styles() {
+		wp_register_style( 'twitter-trends-widget', plugins_url( 'twitter-trends-widget/css/twitter_trends_widget.css' ) );
+		wp_enqueue_style( 'twitter-trends-widget' );
+	}
+	
 	function Twitter_Trends_Widget()
 	{
 		$widget_ops = array('description' => 'Shows latest trends from Cities and Countries');

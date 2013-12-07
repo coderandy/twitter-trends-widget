@@ -19,7 +19,7 @@ This plugin allows you to show twitter trends based on location.
 
 == Installation ==
 
-1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
+1. Upload `twitter-trends-widget` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to Appearance > Widgets and drag 'Twitter Trends Widget' to your sidebar
 4. Update the settings in the widget: Region, number of trends, and twitter oauth data you get from dev.twitter.com

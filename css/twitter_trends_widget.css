@@ -1,4 +1,4 @@
-.widget_twitter-trends-widget .hashcloud a {
+.twitter-trends-widget .hashcloud a {
     float: left;
     color: #fff;
     font-size: 11px !important;
@@ -12,6 +12,6 @@
     -o-transition: background 0.2s linear;
 }
 
-.widget_twitter-trends-widget .hashcloud a:hover {
+.twitter-trends-widget .hashcloud a:hover {
     background: #fc7100;
 }

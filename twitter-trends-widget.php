@@ -111,15 +111,14 @@ class Twitter_Trends_Widget extends WP_Widget {
 		if($twitter && is_array($twitter)) {
 
 		?>
-        <div class="hashcloud">
-          <?php
-
-          echo '<ol>';
-          for ($i=0; $i < $count; $i++){ 
-            echo '<li><a href='.$twitter[0]['trends'][$i]['url'].' target="_blank">'.$twitter[0]['trends'][$i]['name'].'</a></li>';
-          }
-          echo '</ol>';       
-          ?>
+        <div class="twitter-trends-widget" id="<?php echo $args['widget_id']; ?>">
+            <div class="hashcloud">
+              <?php 
+              for ($i=0; $i < $count; $i++){ 
+                echo '<a href='.$twitter[0]['trends'][$i]['url'].' target="_blank">'.$twitter[0]['trends'][$i]['name'].'</a>';
+              }   
+              ?>
+            </div>
         </div>
 		<?php }}
 

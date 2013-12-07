@@ -13,7 +13,7 @@ add_action('widgets_init', 'trends_load_widgets');
 
 function trends_load_widgets()
 {
-	register_widget('Trends_Widget');
+	register_widget('Twitter_Trends_Widget');
 }
 
 class Twitter_Trends_Widget extends WP_Widget {
@@ -139,7 +139,8 @@ class Twitter_Trends_Widget extends WP_Widget {
 		$defaults = array(
 			'title' => 'Twitter Trends', 
 			'region' => '', 
-			'count' => 20, 
+			'count' => 20,
+			'expiration' => '',  
 			'consumer_key' => '', 
 			'consumer_secret' => '', 
 			'access_token' => '',

@@ -147,10 +147,10 @@ class Twitter_Trends_Widget extends WP_Widget {
 			);
 		$instance = wp_parse_args((array) $instance, $defaults); ?>
 
-		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>">Title:</label>
-			<input class="widefat" style="width: 216px;" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $instance['title']; ?>" />
-		</p>
+	<p>
+		<label for="<?php echo $this->get_field_id('title'); ?>">Title:</label>
+		<input class="widefat" style="width: 216px;" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $instance['title']; ?>" />
+	</p>
         <p>
           <label for="<?php echo $this->get_field_id( 'region' ); ?>"><?php _e( 'Select Region:' ); ?>
           <select  class="widefat" name="<?php echo $this->get_field_name( 'region' ); ?>">
@@ -669,25 +669,25 @@ class Twitter_Trends_Widget extends WP_Widget {
           </label>
         </p>
 
-		<p>
-			<label for="<?php echo $this->get_field_id('consumer_key'); ?>">Consumer Key:</label>
-			<input class="widefat" style="width: 216px;" id="<?php echo $this->get_field_id('consumer_key'); ?>" name="<?php echo $this->get_field_name('consumer_key'); ?>" value="<?php echo $instance['consumer_key']; ?>" />
-		</p>
+	<p>
+		<label for="<?php echo $this->get_field_id('consumer_key'); ?>">Consumer Key:</label>
+		<input class="widefat" style="width: 216px;" id="<?php echo $this->get_field_id('consumer_key'); ?>" name="<?php echo $this->get_field_name('consumer_key'); ?>" value="<?php echo $instance['consumer_key']; ?>" />
+	</p>
 
-		<p>
-			<label for="<?php echo $this->get_field_id('consumer_secret'); ?>">Consumer Secret:</label>
-			<input class="widefat" style="width: 216px;" id="<?php echo $this->get_field_id('consumer_secret'); ?>" name="<?php echo $this->get_field_name('consumer_secret'); ?>" value="<?php echo $instance['consumer_secret']; ?>" />
-		</p>
+	<p>
+		<label for="<?php echo $this->get_field_id('consumer_secret'); ?>">Consumer Secret:</label>
+		<input class="widefat" style="width: 216px;" id="<?php echo $this->get_field_id('consumer_secret'); ?>" name="<?php echo $this->get_field_name('consumer_secret'); ?>" value="<?php echo $instance['consumer_secret']; ?>" />
+	</p>
 
-		<p>
-			<label for="<?php echo $this->get_field_id('access_token'); ?>">Access Token:</label>
-			<input class="widefat" style="width: 216px;" id="<?php echo $this->get_field_id('access_token'); ?>" name="<?php echo $this->get_field_name('access_token'); ?>" value="<?php echo $instance['access_token']; ?>" />
-		</p>
+	<p>
+		<label for="<?php echo $this->get_field_id('access_token'); ?>">Access Token:</label>
+		<input class="widefat" style="width: 216px;" id="<?php echo $this->get_field_id('access_token'); ?>" name="<?php echo $this->get_field_name('access_token'); ?>" value="<?php echo $instance['access_token']; ?>" />
+	</p>
 
-		<p>
-			<label for="<?php echo $this->get_field_id('access_token_secret'); ?>">Access Token Secret:</label>
-			<input class="widefat" style="width: 216px;" id="<?php echo $this->get_field_id('access_token_secret'); ?>" name="<?php echo $this->get_field_name('access_token_secret'); ?>" value="<?php echo $instance['access_token_secret']; ?>" />
-		</p>
+	<p>
+		<label for="<?php echo $this->get_field_id('access_token_secret'); ?>">Access Token Secret:</label>
+		<input class="widefat" style="width: 216px;" id="<?php echo $this->get_field_id('access_token_secret'); ?>" name="<?php echo $this->get_field_name('access_token_secret'); ?>" value="<?php echo $instance['access_token_secret']; ?>" />
+	</p>
 
 
 	<?php

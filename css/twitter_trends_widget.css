@@ -1,6 +1,7 @@
+
 .twitter-trends-widget .hashcloud a {
     float: left;
-    color: #fff;
+    color: #fff !important;
     font-size: 11px !important;
     padding: 5px 7px;
     background: #666;

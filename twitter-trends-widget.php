@@ -46,6 +46,7 @@ class Twitter_Trends_Widget extends WP_Widget {
 		$consumer_secret = $instance['consumer_secret'];
 		$access_token = $instance['access_token'];
 		$access_token_secret = $instance['access_token_secret'];
+		$delete_transient = $instance['delete_transient'];
 		
 
 
@@ -57,6 +58,7 @@ class Twitter_Trends_Widget extends WP_Widget {
 
 		if($region && $consumer_key && $consumer_secret && $access_token && $access_token_secret && $count) {
 		$transName = 'twitter_trends_'.$args['widget_id'];
+
 		if(false === ($twitterData = get_transient($transName))) {
 
 			$token = get_option('cfTwitterToken');
@@ -104,10 +106,13 @@ class Twitter_Trends_Widget extends WP_Widget {
 			$response = wp_remote_get($api_url, $args);
 			$decoded_json = json_decode(wp_remote_retrieve_body($response), true);
 			
-			//delete_transinet($transName);
+			
 			set_transient($transName, $decoded_json, 60*60*$cacheTime);
+			
 		}
+
 		$twitter = (array) get_transient($transName);
+
 		if($twitter && is_array($twitter)) {
 
 		?>
@@ -137,6 +142,7 @@ class Twitter_Trends_Widget extends WP_Widget {
 		$instance['consumer_secret'] = $new_instance['consumer_secret'];
 		$instance['access_token'] = $new_instance['access_token'];
 		$instance['access_token_secret'] = $new_instance['access_token_secret'];
+		$instance['delete_transient'] = $new_instance['delete_transient'];
 
 		return $instance;
 	}
@@ -151,7 +157,8 @@ class Twitter_Trends_Widget extends WP_Widget {
 			'consumer_key' => '', 
 			'consumer_secret' => '', 
 			'access_token' => '',
-			'access_token_secret' => ''			
+			'access_token_secret' => '',
+			'delete_transient' => ''	
 			);
 		$instance = wp_parse_args((array) $instance, $defaults); ?>
 
@@ -166,7 +173,6 @@ class Twitter_Trends_Widget extends WP_Widget {
           <optgroup label="Countries">
           <option value="23424747" <?=$instance['region'] == '23424747' ? ' selected="selected"' : '';?>>Argentina</option>
           <option value="23424748" <?=$instance['region'] == '23424748' ? ' selected="selected"' : '';?>>Australia</option>
-          <option value="23424750" <?=$instance['region'] == '23424750' ? ' selected="selected"' : '';?>>Austria</option>
           <option value="23424757" <?=$instance['region'] == '23424757' ? ' selected="selected"' : '';?>>Belgium</option>
           <option value="23424768" <?=$instance['region'] == '23424768' ? ' selected="selected"' : '';?>>Brazil</option>
           <option value="23424775" <?=$instance['region'] == '23424775' ? ' selected="selected"' : '';?>>Canada</option>
@@ -697,8 +703,8 @@ class Twitter_Trends_Widget extends WP_Widget {
 		<input class="widefat" style="width: 216px;" id="<?php echo $this->get_field_id('access_token_secret'); ?>" name="<?php echo $this->get_field_name('access_token_secret'); ?>" value="<?php echo $instance['access_token_secret']; ?>" />
 	</p>
 
-
 	<?php
+	
 	}
 }
 ?>

@@ -1,12 +1,14 @@
 === Twitter Trends Widget ===
 Contributors: jetonr
-Donate link: http://example.com/
+Donate link: http://jrwebstudio.com/
 Tags: twitter, trends, widget
 Requires at least: 3.0.1
 Tested up to: 3.7.1
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AKDHMTXAD647L&item_name=Thank you for your donation!&no_note=0
+
 
 This plugin allows you to show twitter trends based on location. 
 

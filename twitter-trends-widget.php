@@ -6,7 +6,7 @@ Description: Displays Twitter Trends in WordPress widget from Countries and Citi
 Author: jetonr
 Version: 1.0 
 Author URI: http://jrwebstudio.com 
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AKDHMTXAD647L&item_name=Thank you for your donation!&no_note=0
+Donate link: http://goo.gl/RZiu34
 */  
     
 add_action('widgets_init', 'trends_load_widgets');

@@ -103,7 +103,7 @@ class Twitter_Trends_Widget extends WP_Widget {
 		if($twitter && is_array($twitter)) {
 
 		?>
-        <div class="my_textbox">
+        <div class="hashcloud">
           <?php
 
           echo '<ol>';

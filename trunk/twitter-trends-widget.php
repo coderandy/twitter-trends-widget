@@ -46,7 +46,6 @@ class Twitter_Trends_Widget extends WP_Widget {
 		$consumer_secret = $instance['consumer_secret'];
 		$access_token = $instance['access_token'];
 		$access_token_secret = $instance['access_token_secret'];
-		$delete_transient = $instance['delete_transient'];
 		
 
 
@@ -116,7 +115,7 @@ class Twitter_Trends_Widget extends WP_Widget {
 		if($twitter && is_array($twitter)) {
 
 		?>
-        <div class="twitter-trends-widget" id="<?php echo $args['widget_id']; ?>">
+        <div class="twitter-trends-widget clearfix" id="<?php echo $args['widget_id']; ?>">
             <div class="hashcloud">
               <?php 
               for ($i=0; $i < $count; $i++){ 
@@ -142,7 +141,6 @@ class Twitter_Trends_Widget extends WP_Widget {
 		$instance['consumer_secret'] = $new_instance['consumer_secret'];
 		$instance['access_token'] = $new_instance['access_token'];
 		$instance['access_token_secret'] = $new_instance['access_token_secret'];
-		$instance['delete_transient'] = $new_instance['delete_transient'];
 
 		return $instance;
 	}
@@ -158,12 +156,11 @@ class Twitter_Trends_Widget extends WP_Widget {
 			'consumer_secret' => '', 
 			'access_token' => '',
 			'access_token_secret' => '',
-			'delete_transient' => ''	
 			);
 		$instance = wp_parse_args((array) $instance, $defaults); ?>
 
 	<p>
-		<label for="<?php echo $this->get_field_id('title'); ?>">Title:</label>
+		<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:' ); ?></label>
 		<input class="widefat" style="width: 216px;" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $instance['title']; ?>" />
 	</p>
         <p>
@@ -684,22 +681,22 @@ class Twitter_Trends_Widget extends WP_Widget {
         </p>
 
 	<p>
-		<label for="<?php echo $this->get_field_id('consumer_key'); ?>">Consumer Key:</label>
+		<label for="<?php echo $this->get_field_id('consumer_key'); ?>"><?php _e('Consumer Key:'); ?></label>
 		<input class="widefat" style="width: 216px;" id="<?php echo $this->get_field_id('consumer_key'); ?>" name="<?php echo $this->get_field_name('consumer_key'); ?>" value="<?php echo $instance['consumer_key']; ?>" />
 	</p>
 
 	<p>
-		<label for="<?php echo $this->get_field_id('consumer_secret'); ?>">Consumer Secret:</label>
+		<label for="<?php echo $this->get_field_id('consumer_secret'); ?>"><?php _e('Consumer Secret:'); ?></label>
 		<input class="widefat" style="width: 216px;" id="<?php echo $this->get_field_id('consumer_secret'); ?>" name="<?php echo $this->get_field_name('consumer_secret'); ?>" value="<?php echo $instance['consumer_secret']; ?>" />
 	</p>
 
 	<p>
-		<label for="<?php echo $this->get_field_id('access_token'); ?>">Access Token:</label>
+		<label for="<?php echo $this->get_field_id('access_token'); ?>"><?php _e('Access Token:'); ?></label>
 		<input class="widefat" style="width: 216px;" id="<?php echo $this->get_field_id('access_token'); ?>" name="<?php echo $this->get_field_name('access_token'); ?>" value="<?php echo $instance['access_token']; ?>" />
 	</p>
 
 	<p>
-		<label for="<?php echo $this->get_field_id('access_token_secret'); ?>">Access Token Secret:</label>
+		<label for="<?php echo $this->get_field_id('access_token_secret'); ?>"><?php _e('Access Token Secret:'); ?></label>
 		<input class="widefat" style="width: 216px;" id="<?php echo $this->get_field_id('access_token_secret'); ?>" name="<?php echo $this->get_field_name('access_token_secret'); ?>" value="<?php echo $instance['access_token_secret']; ?>" />
 	</p>
 
